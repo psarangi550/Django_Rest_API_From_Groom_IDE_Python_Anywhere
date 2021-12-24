@@ -24,7 +24,7 @@ TEMP_DIR=os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'n7=hr537vuh8&q+w*mmr8huor3(r!^-#xmr4aivgxab0m(@(s0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Deploy_WFMT_To_Python_Anywhere.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMP_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,4 +124,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
+DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS=['https://8000-copper-unicorn-skk7tgc4.ws-us25.gitpod.io','https://9000-copper-unicorn-skk7tgc4.ws-us25.gitpod.io']
 
